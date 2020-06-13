@@ -1,0 +1,63 @@
+/*...................................................................CONTENT layout*/
+.content {
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 15px;
+  grid-row-gap: 10px;
+  /*height: 80vh;*/
+}
+
+/*...............................................................................Filter Panel*/
+.filter-panel {
+  grid-column: 2/5;
+  background-color: #FFFFFF;
+  height: 600px;
+  box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+/*...............................................................................Products Container*/
+.products-container {
+  grid-column: 5/12;
+  background-color: #FFFFFF;
+  margin-left: 15px;
+  box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.books {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.book-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 140px;
+}
+
+.book-details-container .book-cover {
+  width: 130px;
+  height: 200px;
+}
+
+.suggestions-container .title {
+  margin: 10px 15px;
+}
+
+.book-details-container button {
+  margin: 10px;
+  width: 130px;
+  height: 30px;
+  border: 1px solid #28847F;
+  border-radius: 15px;
+  background-color: #28847F;
+  color: #2c2e31;
+  align-self: center;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=products.css.map */
