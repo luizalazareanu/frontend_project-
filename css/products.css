@@ -49,15 +49,13 @@
 }
 
 .book-details-container button {
-  margin: 10px;
-  width: 130px;
   height: 30px;
-  border: 1px solid #28847F;
+  border: 1px solid #3e6767;
   border-radius: 15px;
   background-color: #28847F;
   color: #2c2e31;
-  align-self: center;
   cursor: pointer;
+  margin: 10px;
 }
 
 /*# sourceMappingURL=products.css.map */

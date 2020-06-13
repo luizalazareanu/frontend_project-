@@ -167,6 +167,7 @@
 /*    background-color: #28847F;*/
 /*}*/
 
+@import "./../scss/common";
 /*...................................................................CONTENT layout*/
 .content {
     grid-row: 3/4;
@@ -275,16 +276,9 @@
 }
 
 .book-details-container button{
-    /*margin-left: 30%;*/
+    //margin-left: 30%;
+    @include button-style(130px,$color-light-green,$color-dark-green);
     margin-bottom: 5px;
-    width: 130px;
-    height: 30px;
-    border: 1px solid #28847F;
-    border-radius: 15px;
-    background-color: #28847F;
-    color: #2c2e31;
-    align-self: center;
-    cursor: pointer;
 }
 /*...............................................................................*/
 
@@ -402,13 +396,7 @@
 
 .email-signup-container button{
     margin: 10px;
-    width: 130px;
-    height: 30px;
-    border: 1px solid #f6e770;
-    border-radius: 15px;
-    background-color: #F3E367;
-    color: #2c2e31;
-    cursor: pointer;
+    @include button-style(130px,$color-light-yellow,$color-dark-yellow);
 }
 
 .email-signup-container input{

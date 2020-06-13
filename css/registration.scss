@@ -1,4 +1,4 @@
-
+@import "./../scss/common";
 /*..............................................................CONTENT LAYOUTING*/
 * {
     box-sizing: border-box;
@@ -109,14 +109,15 @@
 
 .wrapper button {
     transition: transform 80ms ease-in-out;
-    border-radius: 10px;
     padding: 3px 15px;
     margin-top: 10px;
-    background-color: #f6e770;
-    color: #2c2e31;
-    border: 1px solid #2c2e31;
-    outline:none;
+    //background-color: #f6e770;
+    //color: #2c2e31;
+    //border: 1px solid #2c2e31;
+    //outline:none;
+    @include button-style(100px,$color-light-yellow,#2c2e31);
 }
+
 .yellow-container h2{
     color: #FFFFFF;
 }

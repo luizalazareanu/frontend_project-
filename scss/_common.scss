@@ -1,14 +1,15 @@
-$primary_color: #fed221;
+$color-light-yellow: #f6e770;
+$color-dark-yellow: #F3E367;
+$color-light-green: #28847F; //buttons
+$color-dark-green: #3e6767; //nav
 
 
-@mixin button-style(){
-  margin: 10px;
-  width: 130px;
+@mixin button-style($width,$background-color,$border-color){
+  width: $width;
   height: 30px;
-  border: 1px solid #28847F;
+  border: 1px solid $border-color;
   border-radius: 15px;
-  background-color: #28847F;
+  background-color:$background-color;
   color: #2c2e31;
-  align-self: center;
   cursor: pointer;
 }

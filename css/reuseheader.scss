@@ -1,3 +1,5 @@
+@import './../scss/common';
+
 /*Layout - 12 column grid system that includes the header, navbar, content, and footer*/
 * {
     margin: 0;
@@ -109,18 +111,10 @@
     opacity: 1;
 }
 
-#logo, .header button:hover {
-    opacity: 1;
-}
-
 .grid-container a:link,
 .grid-container a:visited,
 .grid-container a:active {
     text-decoration: none;
-}
-
-.header button {
-    opacity: .75;
 }
 
 .search-menu {
@@ -133,24 +127,33 @@
     border-radius: 6px;
 }
 
-#search-btn {
-    width: 100px;
-    height: 30px;
-    border: 1px solid #f6e770;
-    border-radius: 15px;
-    background-color: #F3E367;
-    color: #2c2e31;
+/*#search-btn {*/
+/*    width: 100px;*/
+/*    height: 30px;*/
+/*    border: 1px solid #f6e770;*/
+/*    border-radius: 15px;*/
+/*    background-color: #F3E367;*/
+/*    color: #2c2e31;*/
+/*    text-transform: uppercase;*/
+/*    cursor: pointer;*/
+/*}*/
+
+#search-btn{
+    @include button-style(100px,$color-light-yellow,$color-dark-yellow);
     text-transform: uppercase;
+    opacity: .75;
+}
+
+#search-btn:hover,#adv-search-btn:hover{
+    opacity:1;
 }
 
 #adv-search-btn {
-    height: 30px;
-    background-color: #2c2e31;
+    @include button-style(null,#2c2e31,#FFFFFF);
     color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    border-radius: 15px;
     text-transform: uppercase;
     padding: 0 10px;
+    opacity: .75;
 }
 
 .cart {

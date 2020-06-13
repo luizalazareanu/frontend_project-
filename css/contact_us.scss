@@ -1,4 +1,4 @@
-
+@import './../scss/common';
 /*....................................................Content layoutig*/
 
 .content{
@@ -78,11 +78,8 @@
 }
 
 .contact-form button{
+    @include button-style(null,#2c2e31,#2c2e31);
     color:white;
-    background-color: #2c2e31;
-    border: 1px solid #2c2e31;
-    border-radius: 8px;
-    height: 30px;
 }
 
 /*.......................................................ANIMATIONS*/
