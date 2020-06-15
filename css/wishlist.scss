@@ -1,0 +1,16 @@
+@import './../scss/common';
+/*....................................................Content layoutig*/
+
+.content{
+  grid-row: 3/4;
+  height: 80vh;
+
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+
+}
+
+.content img {
+  width: 130px;
+  height: 200px;
+}
