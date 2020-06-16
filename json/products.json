@@ -2,19 +2,22 @@
   {
     "img": "./images/book_covers/this_must_be_the_place.jpg",
     "title":"This Must Be the Place",
-    "autor":"Maggie O'Farrell",
-    "price": "7.89"
+    "author":"Maggie O'Farrell",
+    "price": "7.89",
+    "category": "fiction"
   },
   {
     "img": "./images/book_covers/underground.jpg",
     "title":"The Underground Railroad",
-    "autor":"Colson Whitehead",
-    "price": "9,98"
+    "author":"Colson Whitehead",
+    "price": "9,98",
+    "category": "fiction"
   },
   {
     "img": "./images/book_covers/hike.jpg",
     "title":"Epic Hikes of the World",
-    "autor":"Lonely Planet",
-    "price": "8,98"
+    "author":"Lonely Planet",
+    "price": "8,98",
+    "category": "fiction"
   }
 ]

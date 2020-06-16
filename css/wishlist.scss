@@ -5,12 +5,35 @@
   grid-row: 3/4;
   height: 80vh;
 
-  display:grid;
-  grid-template-columns: repeat(12, 1fr);
+  //display:grid;
+  //grid-template-columns: repeat(12, 1fr);
 
 }
 
 .content img {
   width: 130px;
   height: 200px;
+}
+
+.item{
+  display: flex;
+  flex-direction: column;
+}
+
+.item div{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+//.btn-class {
+//  background-color:deeppink;
+//  @include button-style(null, $color-light-green, $color-dark-green);
+//  margin: 10px;
+//}
+
+button{
+  //background-color:deeppink;
+  @include button-style(null, $color-light-green, $color-dark-green);
+  margin: 10px;
 }
