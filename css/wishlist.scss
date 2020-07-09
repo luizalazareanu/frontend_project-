@@ -15,6 +15,10 @@
   height: 200px;
 }
 
+#showItems{
+  margin-top: 30px;
+}
+
 .item{
   display: flex;
   flex-direction: column;
@@ -34,6 +38,17 @@
 
 button{
   //background-color:deeppink;
-  @include button-style(null, $color-light-green, $color-dark-green);
+  @include button-style(130px, $color-light-green, $color-dark-green);
   margin: 10px;
+
+}
+
+
+span {
+  background: url("./../images/x-button.png") no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: auto 100%;
+  cursor:pointer;
+  //opacity: .5;
 }
