@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function createContentFromJson(library) {
-    var booksContainer = document.getElementById("books")
+    var booksContainer = document.getElementById("books");
     library.forEach(function (book) {
         //create elements
         var divBookDetails = document.createElement("div");
@@ -28,7 +28,7 @@ function createContentFromJson(library) {
         var addToBasket = document.createElement("button");
 
 
-        //setting attributes
+        //set attributes and style
         divBookDetails.setAttribute("class", "book-details-container");
         prodDetailsAncor.setAttribute("href", "./product_details.html");
         bookCover.setAttribute("src", book.cover);
@@ -49,17 +49,5 @@ function createContentFromJson(library) {
         divBookDetails.appendChild(author);
         divBookDetails.appendChild(price);
         divBookDetails.appendChild(addToBasket);
-
-        ///styling
-        // item.style.display = "flex";
-        // item.style.justifyContent = "space-between";
-        // item.style.alignItems = "center";
-        // item.style.marginBottom = "10px";
-        // bookCover.style.Width = "100px";
-        // bookCover.style.height = "150px";
-
-
-        //append each li to ul
-        //document.getElementById("book-list").appendChild(item);
     });
 }
