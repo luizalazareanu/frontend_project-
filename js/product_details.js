@@ -26,15 +26,17 @@ document.getElementById('add-to-wishlist').addEventListener("click", function (e
 }, false);
 
 
-///set book cover, title and author
+///set book cover, title, author and price
 var frontCover = document.getElementById("front-cover");
 var detailsTitle = document.getElementById("item-title");
 var detailsAuthor = document.getElementById("item-author");
+var detailsPrice = document.getElementById("price");
 
 function setFrontCover() {
     frontCover.setAttribute("src", localStorage.getItem('bookCover'));
     detailsTitle.innerHTML = localStorage.getItem('bookTitle');
     detailsAuthor.innerHTML = `By (author) <b>${localStorage.getItem('bookAuthor')}</b>`;
+    detailsPrice.innerHTML = localStorage.getItem('bookPrice');
 }
 
 window.onload = setFrontCover();
