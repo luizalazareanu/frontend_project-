@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
     loadProductsFromJson();
 });
 
-
+var booksContainer = document.getElementById("books");
 function createContentFromJson(library) {
-    var booksContainer = document.getElementById("books");
+    //var booksContainer = document.getElementById("books");
     library.forEach(function (book) {
         //create elements
         var divBookDetails = document.createElement("div");
-        var prodDetailsAncor = document.createElement("a");
+        var prodDetailsAnchor = document.createElement("a");
         var bookCover = document.createElement("img");
         var title = document.createElement("p");
         var author = document.createElement("p");
@@ -30,7 +30,8 @@ function createContentFromJson(library) {
 
         //set attributes and style
         divBookDetails.setAttribute("class", "book-details-container");
-        prodDetailsAncor.setAttribute("href", "./product_details.html");
+        divBookDetails.setAttribute("id", book.id);
+        prodDetailsAnchor.setAttribute("href", "#");
         bookCover.setAttribute("src", book.cover);
         bookCover.setAttribute("class", "book-cover");
         title.innerText = book.title;
@@ -43,11 +44,33 @@ function createContentFromJson(library) {
 
         //append elements
         booksContainer.appendChild(divBookDetails);
-        divBookDetails.appendChild(prodDetailsAncor);
-        prodDetailsAncor.appendChild(bookCover);
+        divBookDetails.appendChild(prodDetailsAnchor);
+        prodDetailsAnchor.appendChild(bookCover);
         divBookDetails.appendChild(title);
         divBookDetails.appendChild(author);
         divBookDetails.appendChild(price);
         divBookDetails.appendChild(addToBasket);
     });
 }
+
+
+////get book cover,title and author from products page onclick
+function getBookCover(event){
+    ///get src value from targeted img
+    var bookImage = event.target.getAttribute("src");
+    var title =event.target.parentNode.nextSibling.innerHTML;
+    var author = event.target.parentNode.parentNode.childNodes[2].innerHTML;
+    console.log(event.target);
+
+    ///put the src value into local storage
+    localStorage.setItem("bookCover",bookImage);
+    localStorage.setItem("bookTitle",title);
+    localStorage.setItem("bookAuthor",author);
+    console.log(localStorage);
+    ///go to product details page
+    window.location.href = 'http://localhost:8080/test/web/product_details.html';
+
+    //return x;
+}
+
+booksContainer.addEventListener('click', getBookCover);

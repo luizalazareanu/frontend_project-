@@ -3,6 +3,7 @@ function showhide() {
     var div = document.getElementById("new-paragraph");
     div.classList.toggle('hidden-paragraph');
 }
+
 //fly to cart functionality on click
 document.getElementById('add-to-cart').addEventListener("click", function (e) {
     e.preventDefault;
@@ -23,3 +24,18 @@ document.getElementById('add-to-wishlist').addEventListener("click", function (e
     // ->re-adding the class
     document.getElementById('add-to-wishlist').classList.add("animate-add-to-wishlist");
 }, false);
+
+
+///set book cover, title and author
+var frontCover = document.getElementById("front-cover");
+var detailsTitle = document.getElementById("item-title");
+var detailsAuthor = document.getElementById("item-author");
+
+function setFrontCover() {
+    frontCover.setAttribute("src", localStorage.getItem('bookCover'));
+    detailsTitle.innerHTML = localStorage.getItem('bookTitle');
+    detailsAuthor.innerHTML = `By (author) <b>${localStorage.getItem('bookAuthor')}</b>`;
+}
+
+window.onload = setFrontCover();
+
