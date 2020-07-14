@@ -1,10 +1,11 @@
-window.onload = addToWishlist();
+var wishlistedBooks = JSON.parse(localStorage.getItem("booksForWishlist"));
+var existingDiv = document.getElementById("showItems");
 
-function addToWishlist(){
-    var wishlistedBooks = JSON.parse(localStorage.getItem("booksForWishlist"));
+function addToWishlist() {
+    // var wishlistedBooks = JSON.parse(localStorage.getItem("booksForWishlist"));
     console.log(wishlistedBooks);
-    wishlistedBooks.forEach(book =>{
-        var existingDiv = document.getElementById("showItems");
+    wishlistedBooks.forEach(book => {
+
         var div = document.createElement('div');
         var frontCover = document.createElement("img");
         var detailsTitle = document.createElement("p");
@@ -19,7 +20,7 @@ function addToWishlist(){
 
         frontCover.setAttribute("src", book.bookImage);
         detailsTitle.innerHTML = book.title;
-        detailsAuthor.innerHTML = book.author.slice(15,-4);
+        detailsAuthor.innerHTML = book.author.slice(15, -4);
         detailsPrice.innerHTML = book.price;
 
         existingDiv.appendChild(div);
@@ -31,3 +32,20 @@ function addToWishlist(){
         div.appendChild(span);
     })
 }
+
+window.onload = addToWishlist();
+
+////// REMOVE from wishlist
+
+function removeFromWishlist(event) {
+    if (event.target.className.includes("remove_item")) {
+        var bookTitle = event.target.parentNode.childNodes[1].innerHTML;
+        const result = wishlistedBooks.filter(book => book.title !== bookTitle);
+        console.log(result);
+        localStorage.setItem("booksForWishlist",JSON.stringify(result));
+        console.log(localStorage);
+        location.reload();
+    }
+}
+
+existingDiv.addEventListener('click', removeFromWishlist);
