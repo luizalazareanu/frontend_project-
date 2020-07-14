@@ -26,7 +26,7 @@ document.getElementById('add-to-wishlist').addEventListener("click", function (e
 }, false);
 
 
-///set book cover, title, author and price
+///set book cover, title, author and price from local storage (comes from products page)
 var frontCover = document.getElementById("front-cover");
 var detailsTitle = document.getElementById("item-title");
 var detailsAuthor = document.getElementById("item-author");
@@ -41,3 +41,31 @@ function setFrontCover() {
 
 window.onload = setFrontCover();
 
+
+////WISHLIST functionality
+var wishlistButton = document.getElementById("add-to-wishlist");
+
+/////add book details into array of objects and parse it into local storage
+function addBookForWishlist() {
+    var wishlistItems = [];
+    ///get book details from targeted book
+    var book = {
+        bookImage: frontCover.getAttribute("src"),
+        title: detailsTitle.innerHTML,
+        author: detailsAuthor.innerHTML,
+        price: detailsPrice.innerHTML,
+    };
+    if (localStorage.getItem("booksForWishlist") === null) {
+        wishlistItems.push(book);
+        localStorage.setItem("booksForWishlist", JSON.stringify(wishlistItems));
+    } else {
+        wishlistItems = JSON.parse(localStorage.getItem("booksForWishlist"));
+        wishlistItems.push(book);
+        localStorage.setItem("booksForWishlist", JSON.stringify(wishlistItems));
+    }
+
+    console.log(wishlistItems);
+    // localStorage.clear();
+}
+
+wishlistButton.addEventListener('click', addBookForWishlist);

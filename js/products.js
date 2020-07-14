@@ -56,20 +56,27 @@ function createContentFromJson(library) {
 
 ////get book cover,title, author and price from products page onclick
 function getBookCover(event){
-    ///get src value from targeted img
-    var bookImage = event.target.getAttribute("src");
-    var title =event.target.parentNode.nextSibling.innerHTML;
-    var author = event.target.parentNode.parentNode.childNodes[2].innerHTML;
-    var price = event.target.parentNode.parentNode.childNodes[3].innerHTML;
+    console.log(event.target);
+    //console.log(event.target.tagName);
+    //console.log(event.target.tagName.includes("IMG"));
+    if(event.target.tagName.includes("IMG")) {
+        ///get src value from targeted img
+        var bookImage = event.target.getAttribute("src");
+        var title = event.target.parentNode.nextSibling.innerHTML;
+        var author = event.target.parentNode.parentNode.childNodes[2].innerHTML;
+        var price = event.target.parentNode.parentNode.childNodes[3].innerHTML;
 
-    ///put the src value into local storage
-    localStorage.setItem("bookCover",bookImage);
-    localStorage.setItem("bookTitle",title);
-    localStorage.setItem("bookAuthor",author);
-    localStorage.setItem("bookPrice",price);
-    console.log(localStorage);
-    ///go to product details page
-    window.location.href = 'http://localhost:8080/test/web/product_details.html';
+        ///put the src value into local storage
+        // localStorage.clear();
+        // console.log(localStorage);
+        localStorage.setItem("bookCover", bookImage);
+        localStorage.setItem("bookTitle", title);
+        localStorage.setItem("bookAuthor", author);
+        localStorage.setItem("bookPrice", price);
+         //console.log(localStorage);
+        ///go to product details page
+        window.location.href = 'http://localhost:8080/test/web/product_details.html';
+    }
 }
 
 booksContainer.addEventListener('click', getBookCover);
