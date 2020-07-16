@@ -13,9 +13,9 @@ function addToWishlist() {
         var detailsPrice = document.createElement("p");
         var span = document.createElement("span");
         var btn = document.createElement("button");
-        btn.className = 'btn_class';
+        btn.className = 'add-to-cart';
         btn.textContent = 'Add to cart';
-        span.className = 'remove_item';
+        span.className = 'remove-item';
         detailsPrice.className = 'price';
 
         frontCover.setAttribute("src", book.bookImage);

@@ -30,14 +30,7 @@
   box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
-
-//.btn-class {
-//  background-color:deeppink;
-//  @include button-style(null, $color-light-green, $color-dark-green);
-//  margin: 10px;
-//}
-
-button{
+.add-to-cart{
   //background-color:deeppink;
   @include button-style(130px, $color-light-green, $color-dark-green);
   margin: 10px;
@@ -45,7 +38,7 @@ button{
 }
 
 
-span {
+.remove-item {
   background: url("./../images/x-button.png") no-repeat;
   width: 20px;
   height: 20px;
