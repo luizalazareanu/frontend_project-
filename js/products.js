@@ -1,5 +1,6 @@
 function loadProductsFromJson() {
-    const requestURL = './../web/json/products.json';
+    //const requestURL = './../web/json/products.json';
+    const requestURL = './../json/products.json';
     const request = new XMLHttpRequest();
     request.open('GET', requestURL);
 
