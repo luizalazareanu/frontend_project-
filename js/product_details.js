@@ -69,3 +69,7 @@ function addBookForWishlist() {
 }
 
 wishlistButton.addEventListener('click', addBookForWishlist);
+
+///ADD TO CART functionality
+var addToCartBtn = document.getElementById("add-to-cart");
+addToCartBtn.addEventListener('click', addBookForWishlist);
